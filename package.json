@@ -1,0 +1,84 @@
+{
+  "name": "use-jquery-react",
+  "version": "0.0.3",
+  "description": "UseJQueryReact is a React hook for easily integrating jQuery into your React applications.",
+  "keywords": [
+    "react",
+    "jquery",
+    "hook",
+    "usejquery"
+  ],
+  "author": {
+    "name": "Mohammad Abu Mattar",
+    "email": "mohammad.khaled@outlook.com",
+    "url": "https://mkabumattar.github.io/"
+  },
+  "homepage": "https://github.com/mkabumattar/use-jquery-react#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkabumattar/use-jquery-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mkabumattar/use-jquery-react/issues"
+  },
+  "scripts": {
+    "lint:fix": "eslint --ignore-path .eslintignore \"src/**/*.ts\" --fix",
+    "lint:check": "eslint --ignore-path .eslintignore \"src/**/*.ts\"",
+    "prettier:fix": "prettier -w ./src --ignore-unknown --no-error-on-unmatched-pattern",
+    "prettier:check": "prettier --check ./src --no-error-on-unmatched-pattern",
+    "check": "npm run lint:check && npm run prettier:check",
+    "fix": "npm run lint:fix && npm run prettier:fix",
+    "clean:lib": "rm -rf lib",
+    "clean:types": "rm -rf lib/types",
+    "build": "npm run clean:lib && rollup --config rollup.config.mjs && npm run clean:types"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": "*",
+    "jquery": "*"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "0.4.4",
+    "@rollup/plugin-typescript": "11.1.6",
+    "@types/eslint": "8.56.2",
+    "@types/jquery": "3.5.29",
+    "@types/node": "20.11.5",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "@typescript-eslint/eslint-plugin": "6.19.1",
+    "@typescript-eslint/parser": "6.19.1",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-unused-imports": "3.0.0",
+    "jquery": "3.7.1",
+    "prettier": "3.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rollup": "4.9.6",
+    "rollup-plugin-dts": "6.1.0",
+    "tslib": "2.6.2",
+    "tsx": "4.7.0",
+    "typescript": "5.3.3"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs",
+      "types": "./index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "/lib",
+    "/index.d.ts"
+  ]
+}
